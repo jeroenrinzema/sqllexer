@@ -1,2 +1,4 @@
-# sqllexer
-Sandbox SQL lexer project
+# SQL lexer
+
+Sandbox SQL lexer project.
+This project should be used for educational purposes only.
