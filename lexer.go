@@ -83,9 +83,12 @@ func (s *Scanner) Ignore() {
 // Peek performs a Next operation immediately followed by a Rewind returning the
 // peeked rune.
 func (s *Scanner) Peek() rune {
-	r := s.Next()
-	s.Rewind()
+	str := s.source[s.position:]
+	if len(str) == 0 {
+		return EOF
+	}
 
+	r, _ = utf8.DecodeRuneInString(str)
 	return r
 }
 
